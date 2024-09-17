@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TH Mpini - Holistic healing, ancestral guidance, and herbal remedies.">
+    <title>TH Mpini - Spiritual and Holistic Healing</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        header {
+            background-color: #4caf50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        h2 {
+            color: #4caf50;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form label, form input, form select, form textarea {
+            margin-bottom: 10px;
+        }
+
+        form input, form select, form textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>TH Mpini</h1>
+        <p>Where ancient wisdom and modern healing meet</p>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Welcome Message -->
+        <section id="home">
+            <h2>Welcome to TH Mpini</h2>
+            <p>"Welcome to TH Mpini, where ancient wisdom and modern healing meet. We offer a range of holistic and herbal remedies tailored to your needs, with ancestral guidance to help you on your spiritual journey."</p>
+            <button onclick="location.href='#booking'">Book Consultation</button>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <h2>About TH Mpini</h2>
+            <p>Thabang Mosoana, born in Mafikeng and raised in Hammanskraal, is not just a Sangoma but also a psychology and philosophy student. With knowledge rooted in Zion church, Thabang’s journey grew through life experiences, leading him to understand that church was just the beginning of what God and the ancestors had planned for him.</p>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services">
+            <h2>Our Services</h2>
+            <ul>
+                <li><strong>Holistic Healing:</strong> Balancing mind, body, and spirit using spiritual practices.</li>
+                <li><strong>Herbal Remedies:</strong> Natural treatments for health, prosperity, and protection.</li>
+                <li><strong>Sangoma Initiation:</strong> Guidance for aspiring Sangomas to connect with their ancestors.</li>
+                <li><strong>WhatsApp, Email, and Call Consultations:</strong> Spiritual guidance through preferred channels.</li>
+                <li><strong>Herbal Remedies Delivery:</strong> Nationwide delivery of remedies for various needs.</li>
+            </ul>
+        </section>
+
+        <!-- Booking Section -->
+        <section id="booking">
+            <h2>Book a Consultation</h2>
+            <form id="booking-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="communication">Preferred Communication:</label>
+                <select id="communication" name="communication" required>
+                    <option value="whatsapp">WhatsApp</option>
+                    <option value="email">Email</option>
+                    <option value="call">Phone Call</option>
+                </select>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials">
+            <h2>Testimonials</h2>
+            <p>"TH Mpini has been a blessing in my life. The herbal remedies and spiritual guidance have brought me peace and healing." – Client A</p>
+            <p>"The Sangoma initiation process has connected me to my ancestors in ways I never imagined." – Client B</p>
+        </section>
+
+        <!-- Blog Section -->
+        <section id="blog">
+            <h2>Spiritual Insights</h2>
+            <article>
+                <h3>The Importance of Ancestral Healing</h3>
+                <p>Ancestral healing can help you overcome spiritual blockages and align with your purpose.</p>
+                <button onclick="likeBlogPost()">React to this article</button>
+            </article>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Email: <a href="mailto:mosoanat9@gmail.com">mosoanat9@gmail.com</a></p>
+            <p>Phone: <a href="tel:+2768362134">+27 68 362 134</a></p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 TH Mpini. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Handle the booking form submission
+        document.getElementById('booking-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for booking a consultation. We will contact you shortly.');
+        });
+
+        // Handle blog post reaction
+        function likeBlogPost() {
+            alert('Thank you for your reaction to this blog post!');
+        }
+    </script>
+</body>
+</html>
