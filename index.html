@@ -9,7 +9,17 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            transition: background-color 1s ease-in-out;
+            animation: backgroundChange 20s infinite alternate;
+        }
+
+        /* Animated Background */
+        @keyframes backgroundChange {
+            0% { background-color: #e4f1e3; }
+            20% { background-color: #e7f5e6; }
+            40% { background-color: #e4f0ef; }
+            60% { background-color: #eef4e7; }
+            80% { background-color: #f3f2eb; }
+            100% { background-color: #e9f3ea; }
         }
 
         /* Navbar Styles */
@@ -43,14 +53,6 @@
             flex-direction: column;
             justify-content: center;
         }
-
-        #home { background-color: #e4f1e3; }
-        #about { background-color: #e7f5e6; }
-        #services { background-color: #e4f0ef; }
-        #booking { background-color: #eef4e7; }
-        #testimonials { background-color: #f3f2eb; }
-        #blog { background-color: #f6e9e4; }
-        #contact { background-color: #e9f3ea; }
 
         h1, h2, h3 {
             color: #3e664f;
