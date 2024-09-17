@@ -36,7 +36,7 @@
         .navbar a {
             color: white;
             text-decoration: none;
-            padding: 14px 20px;
+            padding: 10px 15px;
             text-align: center;
         }
 
@@ -47,8 +47,8 @@
 
         /* Section Styles */
         section {
-            padding: 60px 20px;
-            min-height: 100vh;
+            padding: 40px 20px; /* Reduced padding */
+            min-height: 80vh; /* Reduced section height */
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -105,6 +105,11 @@
         html {
             scroll-behavior: smooth;
         }
+
+        /* Smaller section margins */
+        .section-title {
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
@@ -122,19 +127,19 @@
 
     <!-- Home Section -->
     <section id="home">
-        <h1>Welcome to TH Mpini</h1>
+        <h1 class="section-title">Welcome to TH Mpini</h1>
         <p>"Where ancient wisdom and modern healing meet."</p>
     </section>
 
     <!-- About Section -->
     <section id="about">
-        <h2>About TH Mpini</h2>
+        <h2 class="section-title">About TH Mpini</h2>
         <p>Thabang Mosoana, born in Mafikeng and raised in Hammanskraal, is not just a Sangoma, but also a student of psychology and philosophy. His journey into spirituality started in the Zion Church, growing through life's challenges to embrace the deeper calling of God and the ancestors.</p>
     </section>
 
     <!-- Services Section -->
     <section id="services">
-        <h2>Our Services</h2>
+        <h2 class="section-title">Our Services</h2>
         <p>- Spiritual and holistic healing <br>
            - Herbal remedies for physical and emotional well-being <br>
            - Sangoma initiation <br>
@@ -144,7 +149,7 @@
 
     <!-- Booking Section -->
     <section id="booking">
-        <h2>Book a Consultation</h2>
+        <h2 class="section-title">Book a Consultation</h2>
         <form id="booking-form" action="https://formspree.io/f/xldrkyzw" method="POST">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
@@ -177,20 +182,20 @@
 
     <!-- Testimonials Section -->
     <section id="testimonials">
-        <h2>Testimonials</h2>
+        <h2 class="section-title">Testimonials</h2>
         <p>"TH Mpini has helped me connect with my ancestors and find peace in my life."</p>
         <p>"The herbal remedies provided have greatly improved my health."</p>
     </section>
 
     <!-- Blog Section -->
     <section id="blog">
-        <h2>Spiritual Insights</h2>
+        <h2 class="section-title">Spiritual Insights</h2>
         <p>Check out our blog for insights on ancestral healing, spiritual practices, and holistic well-being.</p>
     </section>
 
     <!-- Contact Section -->
     <section id="contact">
-        <h2>Contact Us</h2>
+        <h2 class="section-title">Contact Us</h2>
         <p>Email: mosoanat9@gmail.com<br>
            Phone: +2768362134<br>
            Location: Available by appointment</p>
