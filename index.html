@@ -3,168 +3,196 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="TH Mpini - Holistic healing, ancestral guidance, and herbal remedies.">
-    <title>TH Mpini - Spiritual and Holistic Healing</title>
+    <title>TH Mpini</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0;
-            color: #333;
+            transition: background-color 1s ease-in-out;
         }
 
-        header {
-            background-color: #4caf50;
+        /* Navbar Styles */
+        .navbar {
+            display: flex;
+            justify-content: space-around;
+            background-color: #3e664f;
+            padding: 10px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar a {
             color: white;
-            padding: 20px;
+            text-decoration: none;
+            padding: 14px 20px;
             text-align: center;
         }
 
-        main {
-            padding: 20px;
+        .navbar a:hover {
+            background-color: #29593d;
+            border-radius: 5px;
         }
 
-        h2 {
-            color: #4caf50;
-        }
-
+        /* Section Styles */
         section {
-            margin-bottom: 40px;
+            padding: 60px 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        #home { background-color: #e4f1e3; }
+        #about { background-color: #e7f5e6; }
+        #services { background-color: #e4f0ef; }
+        #booking { background-color: #eef4e7; }
+        #testimonials { background-color: #f3f2eb; }
+        #blog { background-color: #f6e9e4; }
+        #contact { background-color: #e9f3ea; }
+
+        h1, h2, h3 {
+            color: #3e664f;
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+            color: #333;
+        }
+
+        /* Form Styles */
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+
+        label, input, select, textarea {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        input, select, textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
         }
 
         button {
-            background-color: #4caf50;
+            background-color: #3e664f;
             color: white;
             border: none;
-            padding: 10px 20px;
+            padding: 10px 15px;
             cursor: pointer;
             border-radius: 5px;
         }
 
         button:hover {
-            background-color: #45a049;
+            background-color: #29593d;
         }
 
-        form {
-            display: flex;
-            flex-direction: column;
-        }
-
-        form label, form input, form select, form textarea {
-            margin-bottom: 10px;
-        }
-
-        form input, form select, form textarea {
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <h1>TH Mpini</h1>
-        <p>Where ancient wisdom and modern healing meet</p>
-    </header>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Welcome Message -->
-        <section id="home">
-            <h2>Welcome to TH Mpini</h2>
-            <p>"Welcome to TH Mpini, where ancient wisdom and modern healing meet. We offer a range of holistic and herbal remedies tailored to your needs, with ancestral guidance to help you on your spiritual journey."</p>
-            <button onclick="location.href='#booking'">Book Consultation</button>
-        </section>
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#booking">Booking</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#blog">Blog</a>
+        <a href="#contact">Contact</a>
+    </div>
 
-        <!-- About Section -->
-        <section id="about">
-            <h2>About TH Mpini</h2>
-            <p>Thabang Mosoana, born in Mafikeng and raised in Hammanskraal, is not just a Sangoma but also a psychology and philosophy student. With knowledge rooted in Zion church, Thabang’s journey grew through life experiences, leading him to understand that church was just the beginning of what God and the ancestors had planned for him.</p>
-        </section>
+    <!-- Home Section -->
+    <section id="home">
+        <h1>Welcome to TH Mpini</h1>
+        <p>"Where ancient wisdom and modern healing meet."</p>
+    </section>
 
-        <!-- Services Section -->
-        <section id="services">
-            <h2>Our Services</h2>
-            <ul>
-                <li><strong>Holistic Healing:</strong> Balancing mind, body, and spirit using spiritual practices.</li>
-                <li><strong>Herbal Remedies:</strong> Natural treatments for health, prosperity, and protection.</li>
-                <li><strong>Sangoma Initiation:</strong> Guidance for aspiring Sangomas to connect with their ancestors.</li>
-                <li><strong>WhatsApp, Email, and Call Consultations:</strong> Spiritual guidance through preferred channels.</li>
-                <li><strong>Herbal Remedies Delivery:</strong> Nationwide delivery of remedies for various needs.</li>
-            </ul>
-        </section>
+    <!-- About Section -->
+    <section id="about">
+        <h2>About TH Mpini</h2>
+        <p>Thabang Mosoana, born in Mafikeng and raised in Hammanskraal, is not just a Sangoma, but also a student of psychology and philosophy. His journey into spirituality started in the Zion Church, growing through life's challenges to embrace the deeper calling of God and the ancestors.</p>
+    </section>
 
-        <!-- Booking Section -->
-        <section id="booking">
-            <h2>Book a Consultation</h2>
-            <form id="booking-form">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
+    <!-- Services Section -->
+    <section id="services">
+        <h2>Our Services</h2>
+        <p>- Spiritual and holistic healing <br>
+           - Herbal remedies for physical and emotional well-being <br>
+           - Sangoma initiation <br>
+           - WhatsApp, email, and call consultations <br>
+           - Nationwide delivery of remedies</p>
+    </section>
 
-                <label for="communication">Preferred Communication:</label>
-                <select id="communication" name="communication" required>
-                    <option value="whatsapp">WhatsApp</option>
-                    <option value="email">Email</option>
-                    <option value="call">Phone Call</option>
-                </select>
+    <!-- Booking Section -->
+    <section id="booking">
+        <h2>Book a Consultation</h2>
+        <form id="booking-form" action="https://formspree.io/f/xldrkyzw" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
 
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
+            <label for="communication">Preferred Communication:</label>
+            <select id="communication" name="communication" required>
+                <option value="whatsapp">WhatsApp</option>
+                <option value="email">Email</option>
+                <option value="call">Phone Call</option>
+            </select>
 
-                <button type="submit">Submit</button>
-            </form>
-        </section>
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject" required>
 
-        <!-- Testimonials Section -->
-        <section id="testimonials">
-            <h2>Testimonials</h2>
-            <p>"TH Mpini has been a blessing in my life. The herbal remedies and spiritual guidance have brought me peace and healing." – Client A</p>
-            <p>"The Sangoma initiation process has connected me to my ancestors in ways I never imagined." – Client B</p>
-        </section>
+            <label for="whatsapp">WhatsApp Contact:</label>
+            <input type="text" id="whatsapp" name="whatsapp">
 
-        <!-- Blog Section -->
-        <section id="blog">
-            <h2>Spiritual Insights</h2>
-            <article>
-                <h3>The Importance of Ancestral Healing</h3>
-                <p>Ancestral healing can help you overcome spiritual blockages and align with your purpose.</p>
-                <button onclick="likeBlogPost()">React to this article</button>
-            </article>
-        </section>
+            <label for="email">Email Contact:</label>
+            <input type="email" id="email" name="email">
 
-        <!-- Contact Section -->
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <p>Email: <a href="mailto:mosoanat9@gmail.com">mosoanat9@gmail.com</a></p>
-            <p>Phone: <a href="tel:+2768362134">+27 68 362 134</a></p>
-        </section>
-    </main>
+            <label for="phone">Phone Contact:</label>
+            <input type="tel" id="phone" name="phone">
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 TH Mpini. All rights reserved.</p>
-    </footer>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
 
-    <script>
-        // Handle the booking form submission
-        document.getElementById('booking-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for booking a consultation. We will contact you shortly.');
-        });
+            <button type="submit">Submit</button>
+        </form>
+    </section>
 
-        // Handle blog post reaction
-        function likeBlogPost() {
-            alert('Thank you for your reaction to this blog post!');
-        }
-    </script>
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <h2>Testimonials</h2>
+        <p>"TH Mpini has helped me connect with my ancestors and find peace in my life."</p>
+        <p>"The herbal remedies provided have greatly improved my health."</p>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog">
+        <h2>Spiritual Insights</h2>
+        <p>Check out our blog for insights on ancestral healing, spiritual practices, and holistic well-being.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: mosoanat9@gmail.com<br>
+           Phone: +2768362134<br>
+           Location: Available by appointment</p>
+    </section>
+
 </body>
 </html>
