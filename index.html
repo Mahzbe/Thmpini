@@ -167,6 +167,33 @@
         html {
             scroll-behavior: smooth;
         }
+
+        /* Form Styles */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        input[type="text"], input[type="email"], textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #3e664f;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #29593d;
+        }
     </style>
 </head>
 <body>
@@ -224,7 +251,38 @@
     <img src="th.jpeg" alt="TH Mpini Image">
 </section>
 
-<!-- More sections... -->
+<!-- Services Section -->
+<section id="services">
+    <h2>Our Services</h2>
+    <p>TH Mpini offers various spiritual services, from traditional healing to spiritual consulting and ancestral connections. Book a session now to explore how we can assist you in your spiritual journey.</p>
+</section>
+
+<!-- Testimonials Section -->
+<section id="testimonials">
+    <h2>Testimonials</h2>
+    <p>See what our clients have to say about their experience with TH Mpini.</p>
+    <div class="testimonial">
+        <p>"TH Mpini helped me reconnect with my roots and find peace after a difficult time in my life."</p>
+        <p>- Satisfied Client</p>
+    </div>
+</section>
+
+<!-- Blog Section -->
+<section id="blog">
+    <h2>Blog</h2>
+    <p>Stay updated with the latest from TH Mpini’s journey, spiritual insights, and more. New articles posted monthly.</p>
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+    <h2>Contact Us</h2>
+    <form>
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <input type="submit" value="Send">
+    </form>
+</section>
 
 <!-- Footer with TikTok Follow Button -->
 <footer class="footer">
@@ -239,23 +297,21 @@
         navbar.classList.toggle('show');
     }
 
-    // Close Navbar on Link Click
     function closeNavbar() {
         const navbar = document.getElementById('navbar');
         navbar.classList.remove('show');
     }
 
-    // Carousel
-    let currentIndex = 0;
+    // Carousel Functionality
     const carousel = document.getElementById('carousel');
-    const carouselItems = carousel.children;
+    let carouselIndex = 0;
 
-    function rotateCarousel() {
-        currentIndex = (currentIndex + 1) % carouselItems.length;
-        carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+    function moveCarousel() {
+        carouselIndex = (carouselIndex + 1) % carousel.children.length;
+        carousel.style.transform = `translateX(-${carouselIndex * 100}%)`;
     }
 
-    setInterval(rotateCarousel, 3000); // Rotate every 3 seconds
+    setInterval(moveCarousel, 4000); // Automatically moves every 4 seconds
 </script>
 </body>
 </html>
