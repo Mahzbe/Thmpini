@@ -327,13 +327,14 @@
             <label for="message">Message:</label>
             <textarea id="message" name="message" rows="4" required></textarea>
 
-            <button type="submit">Submit</button>
+            <button type="submit">Send</button>
         </form>
     </section>
 
     <!-- Footer Section -->
     <div class="footer">
         <p>Contact: mosoanat9@gmail.com</p>
+        <button class="tiktok-button" onclick="window.open('https://Tiktok.com/@mafelempinithamb', '_blank')">Follow us on TikTok</button>
     </div>
 
     <script>
@@ -368,6 +369,9 @@
         }
 
         showSlide(slideIndex); // Initialize slide show
+
+        // Automatically change slides every 3 seconds
+        setInterval(nextSlide, 3000); // Change slide every 3 seconds
     </script>
 </body>
 </html>
