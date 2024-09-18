@@ -278,8 +278,8 @@
                     <div class="carousel-description">Sacred river used in rituals</div>
                 </div>
             </div>
-            <button class="carousel-button prev" onclick="prevSlide()">&#10094;</button>
-            <button class="carousel-button next" onclick="nextSlide()">&#10095;</button>
+            <button class="carousel-button prev" onclick="prevSlide()">❮</button>
+            <button class="carousel-button next" onclick="nextSlide()">❯</button>
         </div>
 
         <!-- Book Now Button -->
@@ -324,21 +324,35 @@
 
             <label for="message">Message:</label>
             <textarea id="message" name="message" rows="4" required></textarea>
-
+            
             <button type="submit">Submit</button>
         </form>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <h2>Testimonials</h2>
+        <p>“My experience with Thabang was truly transformative. I felt a deep connection during the healing sessions and walked away with newfound clarity and peace.” - Sarah J.</p>
+        <p>“Thabang's insights were spot on! His guidance has helped me navigate my life’s challenges with confidence. Highly recommended!” - Michael R.</p>
+        <p>“I was skeptical at first, but after my sessions with Thabang, I now believe in the power of spiritual healing. Thank you for your wisdom!” - Jessica L.</p>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog">
+        <h2>Blog</h2>
+        <p>Stay tuned for our upcoming articles on holistic healing, spiritual practices, and wellness tips.</p>
     </section>
 
     <!-- Contact Section -->
     <section id="contact">
         <h2>Contact Us</h2>
-        <p>Email us at <a href="mailto:mosoanat9@gmail.com">mosoanat9@gmail.com</a></p>
+        <p>For inquiries, please email us at: <a href="mailto:mosoanat9@gmail.com">mosoanat9@gmail.com</a></p>
     </section>
 
     <!-- Footer -->
     <div class="footer">
-        <p>&copy; 2024 TH Mpini. All rights reserved.</p>
-        <button class="tiktok-button" onclick="window.open('https://www.tiktok.com')">Visit our TikTok</button>
+        <p>© 2023 TH Mpini. All Rights Reserved.</p>
+        <button class="tiktok-button">Follow us on TikTok</button>
     </div>
 
     <script>
@@ -347,6 +361,17 @@
             var navbar = document.getElementById('navbar');
             navbar.classList.toggle('show');
         }
+
+        // Close the menu when a link is clicked
+        function closeNavbar() {
+            var navbar = document.getElementById('navbar');
+            navbar.classList.remove('show');
+        }
+
+        // Add event listeners to each navbar link to close the navbar
+        document.querySelectorAll('.navbar a').forEach(link => {
+            link.addEventListener('click', closeNavbar);
+        });
 
         // Carousel Logic
         var currentIndex = 0;
@@ -376,6 +401,5 @@
         // Auto slide every 3 seconds
         setInterval(nextSlide, 3000);
     </script>
-
 </body>
 </html>
