@@ -221,10 +221,12 @@
 
         /* Image Styles */
         .about-image {
-            width: 100%;
-            height: auto;
+            width: 250px; /* Set width to 250px */
+            height: 250px; /* Set height to 250px */
             display: block;
             margin: 20px auto;
+            border-radius: 50%; /* This makes the image round */
+            object-fit: cover; /* Ensures the image covers the area without distortion */
         }
 
         /* Smooth Scroll */
@@ -245,7 +247,6 @@
         <a href="#services">Services</a>
         <a href="#booking">Booking</a>
         <a href="#testimonials">Testimonials</a>
-        <a href="#blog">Blog</a>
         <a href="#contact">Contact</a>
     </div>
 
@@ -304,6 +305,14 @@
         </p>
     </section>
 
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <h2>Testimonials</h2>
+        <p>"The guidance I received was transformative!" - Anonymous 1</p>
+        <p>"A truly enlightening experience." - Anonymous 2</p>
+        <p>"I feel rejuvenated and at peace." - Anonymous 3</p>
+    </section>
+
     <!-- Booking Section -->
     <section id="booking">
         <h2>Book a Consultation</h2>
@@ -324,82 +333,55 @@
 
             <label for="message">Message:</label>
             <textarea id="message" name="message" rows="4" required></textarea>
-            
+
             <button type="submit">Submit</button>
         </form>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials">
-        <h2>Testimonials</h2>
-        <p>“My experience with Thabang was truly transformative. I felt a deep connection during the healing sessions and walked away with newfound clarity and peace.” - Sarah J.</p>
-        <p>“Thabang's insights were spot on! His guidance has helped me navigate my life’s challenges with confidence. Highly recommended!” - Michael R.</p>
-        <p>“I was skeptical at first, but after my sessions with Thabang, I now believe in the power of spiritual healing. Thank you for your wisdom!” - Jessica L.</p>
-    </section>
-
-    <!-- Blog Section -->
-    <section id="blog">
-        <h2>Blog</h2>
-        <p>Stay tuned for our upcoming articles on holistic healing, spiritual practices, and wellness tips.</p>
     </section>
 
     <!-- Contact Section -->
     <section id="contact">
         <h2>Contact Us</h2>
-        <p>For inquiries, please email us at: <a href="mailto:mosoanat9@gmail.com">mosoanat9@gmail.com</a></p>
+        <p>If you have any questions or would like more information, feel free to reach out!</p>
+        <p>Email: <a href="mailto:mosoanat9@gmail.com">mosoanat9@gmail.com</a></p>
+        <p>Phone: <a href="tel:+1234567890">+123 456 7890</a></p>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer Section -->
     <div class="footer">
-        <p>© 2023 TH Mpini. All Rights Reserved.</p>
+        <p>&copy; 2023 TH Mpini. All rights reserved.</p>
         <button class="tiktok-button">Follow us on TikTok</button>
     </div>
 
     <script>
-        // Toggle Navbar Visibility
         function toggleNavbar() {
-            var navbar = document.getElementById('navbar');
+            const navbar = document.getElementById('navbar');
             navbar.classList.toggle('show');
         }
 
-        // Close the menu when a link is clicked
-        function closeNavbar() {
-            var navbar = document.getElementById('navbar');
-            navbar.classList.remove('show');
-        }
-
-        // Add event listeners to each navbar link to close the navbar
-        document.querySelectorAll('.navbar a').forEach(link => {
-            link.addEventListener('click', closeNavbar);
-        });
-
-        // Carousel Logic
-        var currentIndex = 0;
-        var carouselImages = document.querySelectorAll('.carousel-image');
-        var totalImages = carouselImages.length;
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-image');
 
         function showSlide(index) {
-            if (index >= totalImages) {
-                currentIndex = 0;
+            const totalSlides = slides.length;
+            if (index >= totalSlides) {
+                currentSlide = 0;
             } else if (index < 0) {
-                currentIndex = totalImages - 1;
+                currentSlide = totalSlides - 1;
             } else {
-                currentIndex = index;
+                currentSlide = index;
             }
-            var newTransformValue = -currentIndex * 100 + '%';
-            document.getElementById('carousel').style.transform = 'translateX(' + newTransformValue + ')';
+            const carousel = document.getElementById('carousel');
+            carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
         }
 
         function nextSlide() {
-            showSlide(currentIndex + 1);
+            showSlide(currentSlide + 1);
         }
 
         function prevSlide() {
-            showSlide(currentIndex - 1);
+            showSlide(currentSlide - 1);
         }
-
-        // Auto slide every 3 seconds
-        setInterval(nextSlide, 3000);
     </script>
+
 </body>
 </html>
