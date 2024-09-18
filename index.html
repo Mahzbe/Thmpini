@@ -247,6 +247,7 @@
         <a href="#services">Services</a>
         <a href="#booking">Booking</a>
         <a href="#testimonials">Testimonials</a>
+        <a href="#blog">Blog</a>
         <a href="#contact">Contact</a>
     </div>
 
@@ -305,14 +306,6 @@
         </p>
     </section>
 
-    <!-- Testimonials Section -->
-    <section id="testimonials">
-        <h2>Testimonials</h2>
-        <p>"The guidance I received was transformative!" - Anonymous 1</p>
-        <p>"A truly enlightening experience." - Anonymous 2</p>
-        <p>"I feel rejuvenated and at peace." - Anonymous 3</p>
-    </section>
-
     <!-- Booking Section -->
     <section id="booking">
         <h2>Book a Consultation</h2>
@@ -333,55 +326,82 @@
 
             <label for="message">Message:</label>
             <textarea id="message" name="message" rows="4" required></textarea>
-
+            
             <button type="submit">Submit</button>
         </form>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <h2>Testimonials</h2>
+        <p>“My experience with Thabang was truly transformative. I felt a deep connection during the healing sessions and walked away with newfound clarity and peace.”</p>
+        <p>“Thabang's insights were spot on! His guidance has helped me navigate my life’s challenges with confidence. Highly recommended!”</p>
+        <p>“I was skeptical at first, but after my sessions with Thabang, I now believe in the power of spiritual healing. Thank you for your wisdom!”</p>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog">
+        <h2>Blog</h2>
+        <p>Stay tuned for our upcoming articles on holistic healing, spiritual practices, and wellness tips.</p>
     </section>
 
     <!-- Contact Section -->
     <section id="contact">
         <h2>Contact Us</h2>
-        <p>If you have any questions or would like more information, feel free to reach out!</p>
-        <p>Email: <a href="mailto:mosoanat9@gmail.com">mosoanat9@gmail.com</a></p>
-        <p>Phone: <a href="tel:+1234567890">+123 456 7890</a></p>
+        <p>For inquiries, please email us at: <a href="mailto:mosoanat9@gmail.com">mosoanat9@gmail.com</a></p>
     </section>
 
-    <!-- Footer Section -->
+    <!-- Footer -->
     <div class="footer">
-        <p>&copy; 2023 TH Mpini. All rights reserved.</p>
+        <p>© 2023 TH Mpini. All Rights Reserved.</p>
         <button class="tiktok-button">Follow us on TikTok</button>
     </div>
 
     <script>
+        // Toggle Navbar Visibility
         function toggleNavbar() {
-            const navbar = document.getElementById('navbar');
+            var navbar = document.getElementById('navbar');
             navbar.classList.toggle('show');
         }
 
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.carousel-image');
+        // Close the menu when a link is clicked
+        function closeNavbar() {
+            var navbar = document.getElementById('navbar');
+            navbar.classList.remove('show');
+        }
+
+        // Add event listeners to each navbar link to close the navbar
+        document.querySelectorAll('.navbar a').forEach(link => {
+            link.addEventListener('click', closeNavbar);
+        });
+
+        // Carousel Logic
+        var currentIndex = 0;
+        var carouselImages = document.querySelectorAll('.carousel-image');
+        var totalImages = carouselImages.length;
 
         function showSlide(index) {
-            const totalSlides = slides.length;
-            if (index >= totalSlides) {
-                currentSlide = 0;
+            if (index >= totalImages) {
+                currentIndex = 0;
             } else if (index < 0) {
-                currentSlide = totalSlides - 1;
+                currentIndex = totalImages - 1;
             } else {
-                currentSlide = index;
+                currentIndex = index;
             }
-            const carousel = document.getElementById('carousel');
-            carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+            var newTransformValue = -currentIndex * 100 + '%';
+            document.getElementById('carousel').style.transform = 'translateX(' + newTransformValue + ')';
         }
 
         function nextSlide() {
-            showSlide(currentSlide + 1);
+            showSlide(currentIndex + 1);
         }
 
         function prevSlide() {
-            showSlide(currentSlide - 1);
+            showSlide(currentIndex - 1);
         }
-    </script>
 
+        // Auto slide every 3 seconds
+        setInterval(nextSlide, 3000);
+    </script>
 </body>
 </html>
