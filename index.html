@@ -14,11 +14,11 @@
 
         /* Animated Background */
         @keyframes backgroundChange {
-            0% { background-color: #e4f1e3; } /* light green */
-            25% { background-color: #cfe5ec; } /* light blue */
-            50% { background-color: #f0e7d8; } /* soft beige */
-            75% { background-color: #d3e8f8; } /* powder blue */
-            100% { background-color: #f3ebf0; } /* calm pink */
+            0% { background-color: #e4f1e3; }
+            25% { background-color: #cfe5ec; }
+            50% { background-color: #f0e7d8; }
+            75% { background-color: #d3e8f8; }
+            100% { background-color: #f3ebf0; }
         }
 
         /* Navbar Styles */
@@ -37,7 +37,7 @@
         }
 
         .navbar.show {
-            max-height: 500px; /* Adjust as needed to fit content */
+            max-height: 500px;
         }
 
         .navbar a {
@@ -74,8 +74,8 @@
 
         /* Section Styles */
         section {
-            padding: 20px 15px; /* Reduced padding */
-            min-height: 60vh; /* Reduced section height */
+            padding: 20px 15px;
+            min-height: 60vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -91,103 +91,48 @@
             color: #333;
         }
 
-        /* Form Styles */
-        form {
-            display: flex;
-            flex-direction: column;
-            max-width: 600px;
+        img {
+            max-width: 100%;
+            display: block;
             margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-        }
-
-        label, input, select, textarea {
-            margin: 10px 0;
-            font-size: 16px;
-        }
-
-        input, select, textarea {
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            width: 100%;
-        }
-
-        button {
-            background-color: #3e664f;
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-
-        button:hover {
-            background-color: #29593d;
         }
 
         /* Carousel Styles */
         .carousel-container {
             position: relative;
-            width: 100%;
-            max-width: 600px;
+            max-width: 100%;
             margin: 0 auto;
             overflow: hidden;
+            padding: 20px;
         }
 
-        .carousel-images {
+        .carousel {
             display: flex;
             transition: transform 0.5s ease-in-out;
         }
 
-        .carousel-image {
-            min-width: 100%;
-            box-sizing: border-box;
+        .carousel img {
+            width: 100%;
+            border-radius: 10px;
         }
 
-        .carousel-description {
+        .carousel img + p {
             text-align: center;
-            padding: 10px;
+            color: #333;
         }
 
-        .carousel-button {
+        .book-now-button {
             position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: #3e664f;
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-
-        .carousel-button.prev {
-            left: 10px;
-        }
-
-        .carousel-button.next {
-            right: 10px;
-        }
-
-        .fixed-button {
-            position: fixed;
-            bottom: 20px;
+            bottom: 10px;
             left: 50%;
             transform: translateX(-50%);
             background-color: #3e664f;
             color: white;
             border: none;
-            padding: 15px 30px;
+            padding: 10px;
             cursor: pointer;
             border-radius: 5px;
-            font-size: 18px;
-        }
-
-        .fixed-button:hover {
-            background-color: #29593d;
+            z-index: 1;
         }
 
         /* TikTok Button Styles */
@@ -196,7 +141,6 @@
             color: white;
             text-align: center;
             padding: 20px;
-            position: relative;
         }
 
         .footer p {
@@ -219,14 +163,6 @@
             background-color: #333;
         }
 
-        /* Image Styles */
-        .about-image {
-            width: 100%;
-            height: auto;
-            display: block;
-            margin: 20px auto;
-        }
-
         /* Smooth Scroll */
         html {
             scroll-behavior: smooth;
@@ -234,157 +170,92 @@
     </style>
 </head>
 <body>
+<!-- Menu Button -->
+<button class="menu-button" onclick="toggleNavbar()">Menu</button>
 
-    <!-- Menu Button -->
-    <button class="menu-button" onclick="toggleNavbar()">Menu</button>
+<!-- Navbar -->
+<div class="navbar" id="navbar">
+    <a href="#home" onclick="closeNavbar()">Home</a>
+    <a href="#about" onclick="closeNavbar()">About</a>
+    <a href="#services" onclick="closeNavbar()">Services</a>
+    <a href="#booking" onclick="closeNavbar()">Booking</a>
+    <a href="#testimonials" onclick="closeNavbar()">Testimonials</a>
+    <a href="#blog" onclick="closeNavbar()">Blog</a>
+    <a href="#contact" onclick="closeNavbar()">Contact</a>
+</div>
 
-    <!-- Navbar -->
-    <div class="navbar" id="navbar">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#booking">Booking</a>
-        <a href="#testimonials">Testimonials</a>
-        <a href="#blog">Blog</a>
-        <a href="#contact">Contact</a>
-    </div>
+<!-- Home Section -->
+<section id="home">
+    <h1>Welcome to TH Mpini</h1>
+    <p>"Where ancient wisdom and modern healing meet."</p>
 
-    <!-- Home Section -->
-    <section id="home">
-        <h1>Welcome to TH Mpini</h1>
-        <p>"Where ancient wisdom and modern healing meet."</p>
-
-        <!-- Carousel -->
-        <div class="carousel-container">
-            <div class="carousel-images" id="carousel">
-                <div class="carousel-image">
-                    <img src="bones.jpg" alt="Bones" style="width: 100%;">
-                    <div class="carousel-description">Bones used in traditional healing</div>
-                </div>
-                <div class="carousel-image">
-                    <img src="healing.jpg" alt="Healing" style="width: 100%;">
-                    <div class="carousel-description">Healing through spiritual practices</div>
-                </div>
-                <div class="carousel-image">
-                    <img src="herbs.jpg" alt="Herbs" style="width: 100%;">
-                    <div class="carousel-description">Herbs for physical and emotional wellness</div>
-                </div>
-                <div class="carousel-image">
-                    <img src="initiation.jpeg" alt="Initiation" style="width: 100%;">
-                    <div class="carousel-description">Rituals and initiation ceremonies</div>
-                </div>
-                <div class="carousel-image">
-                    <img src="river.jpg" alt="River" style="width: 100%;">
-                    <div class="carousel-description">Sacred river used in rituals</div>
-                </div>
+    <!-- Carousel -->
+    <div class="carousel-container">
+        <div class="carousel" id="carousel">
+            <div>
+                <img src="bones.jpg" alt="Bones">
+                <p>Spiritual Bones Reading</p>
             </div>
-            <button class="carousel-button prev" onclick="prevSlide()">&#10094;</button>
-            <button class="carousel-button next" onclick="nextSlide()">&#10095;</button>
+            <div>
+                <img src="healing.jpg" alt="Healing">
+                <p>Holistic Healing Practices</p>
+            </div>
+            <div>
+                <img src="herbs.jpg" alt="Herbs">
+                <p>Herbal Remedies</p>
+            </div>
+            <div>
+                <img src="initiation.jpeg" alt="Initiation">
+                <p>Sangoma Initiation</p>
+            </div>
+            <div>
+                <img src="river.jpg" alt="River">
+                <p>River Cleansing Rituals</p>
+            </div>
         </div>
-
-        <!-- Book Now Button -->
-        <button class="fixed-button" onclick="window.location.href='#booking'">Book Now!</button>
-    </section>
-
-    <!-- About Section -->
-    <section id="about">
-        <h2>About TH Mpini</h2>
-        <p>Thabang Mosoana, born in Mafikeng and raised in Hammanskraal, is not just a Sangoma, but also a student of psychology and philosophy. His journey into spirituality started in the Zion Church, growing through life's challenges to embrace the deeper calling of God and the ancestors.</p>
-        <!-- Added Image -->
-        <img src="th.jpeg" alt="Thabang Mosoana" class="about-image">
-    </section>
-
-    <!-- Services Section -->
-    <section id="services">
-        <h2>Our Services</h2>
-        <p>- Spiritual and holistic healing<br>
-           - Herbal remedies for physical and emotional well-being<br>
-           - Sangoma initiation<br>
-           - WhatsApp, email, and call consultations<br>
-           - Nationwide delivery of remedies</p>
-    </section>
-
-    <!-- Booking Section -->
-    <section id="booking">
-        <h2>Book a Consultation</h2>
-        <form action="#" method="post">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="phone">Phone:</label>
-            <input type="tel" id="phone" name="phone">
-
-            <label for="date">Preferred Date:</label>
-            <input type="date" id="date" name="date">
-
-            <label for="time">Preferred Time:</label>
-            <input type="time" id="time" name="time">
-
-            <label for="message">Additional Information:</label>
-            <textarea id="message" name="message" rows="4"></textarea>
-
-            <button type="submit">Submit</button>
-        </form>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials">
-        <h2>What Our Clients Say</h2>
-        <p>"A transformative experience. Thabang's healing sessions are profound and deeply impactful." - Client A</p>
-        <p>"I've found a renewed sense of peace and purpose thanks to Thabang's guidance." - Client B</p>
-    </section>
-
-    <!-- Blog Section -->
-    <section id="blog">
-        <h2>Blog</h2>
-        <p>Stay tuned for updates and insights on spirituality, wellness, and personal development.</p>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>For more information or to schedule a consultation, please reach out via the contact form or directly at:</p>
-        <p>Email: thabangmpini@gmail.com<br>Phone: +27 123 456 789</p>
-    </section>
-
-    <!-- Footer -->
-    <div class="footer">
-        <p>&copy; 2024 TH Mpini. All rights reserved.</p>
-        <button class="tiktok-button" onclick="window.location.href='https://www.tiktok.com/@thabangmpini'">Follow us on TikTok</button>
+        <button class="book-now-button" onclick="alert('Booking feature coming soon!')">Book Now!</button>
     </div>
+</section>
 
-    <script>
-        let currentSlide = 0;
+<!-- About Section -->
+<section id="about">
+    <h2>About TH Mpini</h2>
+    <p>Thabang Mosoana, born in Mafikeng and raised in Hammanskraal, is not just a Sangoma, but also a student of psychology and philosophy. His journey into spirituality started in the Zion Church, growing through life's challenges to embrace the deeper calling of God and the ancestors.</p>
+    <img src="th.jpeg" alt="TH Mpini Image">
+</section>
 
-        function showSlide(index) {
-            const slides = document.querySelector('.carousel-images');
-            const totalSlides = document.querySelectorAll('.carousel-image').length;
-            if (index >= totalSlides) {
-                currentSlide = 0;
-            } else if (index < 0) {
-                currentSlide = totalSlides - 1;
-            } else {
-                currentSlide = index;
-            }
-            slides.style.transform = `translateX(-${currentSlide * 100}%)`;
-        }
+<!-- More sections... -->
 
-        function nextSlide() {
-            showSlide(currentSlide + 1);
-        }
+<!-- Footer with TikTok Follow Button -->
+<footer class="footer">
+    <p>Follow TH Mpini on TikTok:</p>
+    <button class="tiktok-button" onclick="window.open('https://www.tiktok.com/@mafelempinithamb?_t=8poDhehlxZe&_r=1', '_blank')">Follow</button>
+</footer>
 
-        function prevSlide() {
-            showSlide(currentSlide - 1);
-        }
+<script>
+    // Navbar Toggle
+    function toggleNavbar() {
+        const navbar = document.getElementById('navbar');
+        navbar.classList.toggle('show');
+    }
 
-        function toggleNavbar() {
-            const navbar = document.getElementById('navbar');
-            navbar.classList.toggle('show');
-        }
-    </script>
+    // Close Navbar on Link Click
+    function closeNavbar() {
+        const navbar = document.getElementById('navbar');
+        navbar.classList.remove('show');
+    }
 
+    // Carousel
+    let currentIndex = 0;
+    const carousel = document.getElementById('carousel');
+    const carouselItems = carousel.children;
+
+    function rotateCarousel() {
+        currentIndex = (currentIndex + 1) % carouselItems.length;
+        carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    setInterval(rotateCarousel, 3000); // Rotate every 3 seconds
+</script>
 </body>
 </html>
