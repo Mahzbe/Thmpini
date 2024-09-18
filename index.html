@@ -309,7 +309,7 @@
     <!-- Booking Section -->
     <section id="booking">
         <h2>Book a Consultation</h2>
-        <form action="submit_form.php" method="post">
+        <form action="https://formspree.io/f/xldrkyzw" method="POST">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
 
@@ -326,82 +326,38 @@
 
             <label for="message">Message:</label>
             <textarea id="message" name="message" rows="4" required></textarea>
-            
+
             <button type="submit">Submit</button>
         </form>
     </section>
 
-    <!-- Testimonials Section -->
-    <section id="testimonials">
-        <h2>Testimonials</h2>
-        <p>“My experience with Thabang was truly transformative. I felt a deep connection during the healing sessions and walked away with newfound clarity and peace.”</p>
-        <p>“Thabang's insights were spot on! His guidance has helped me navigate my life’s challenges with confidence. Highly recommended!”</p>
-        <p>“I was skeptical at first, but after my sessions with Thabang, I now believe in the power of spiritual healing. Thank you for your wisdom!”</p>
-    </section>
-
-    <!-- Blog Section -->
-    <section id="blog">
-        <h2>Blog</h2>
-        <p>Stay tuned for our upcoming articles on holistic healing, spiritual practices, and wellness tips.</p>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>For inquiries, please email us at: <a href="mailto:mosoanat9@gmail.com">mosoanat9@gmail.com</a></p>
-    </section>
-
-    <!-- Footer -->
-    <div class="footer">
-        <p>© 2023 TH Mpini. All Rights Reserved.</p>
-        <button class="tiktok-button">Follow us on TikTok</button>
-    </div>
-
     <script>
-        // Toggle Navbar Visibility
+        // Navbar toggle functionality
         function toggleNavbar() {
-            var navbar = document.getElementById('navbar');
+            const navbar = document.getElementById('navbar');
             navbar.classList.toggle('show');
         }
 
-        // Close the menu when a link is clicked
-        function closeNavbar() {
-            var navbar = document.getElementById('navbar');
-            navbar.classList.remove('show');
-        }
-
-        // Add event listeners to each navbar link to close the navbar
-        document.querySelectorAll('.navbar a').forEach(link => {
-            link.addEventListener('click', closeNavbar);
-        });
-
-        // Carousel Logic
-        var currentIndex = 0;
-        var carouselImages = document.querySelectorAll('.carousel-image');
-        var totalImages = carouselImages.length;
-
-        function showSlide(index) {
-            if (index >= totalImages) {
-                currentIndex = 0;
-            } else if (index < 0) {
-                currentIndex = totalImages - 1;
-            } else {
-                currentIndex = index;
-            }
-            var newTransformValue = -currentIndex * 100 + '%';
-            document.getElementById('carousel').style.transform = 'translateX(' + newTransformValue + ')';
+        // Carousel functionality
+        let slideIndex = 0;
+        function showSlide(n) {
+            const slides = document.querySelectorAll('.carousel-image');
+            if (n >= slides.length) { slideIndex = 0; }
+            if (n < 0) { slideIndex = slides.length - 1; }
+            slides.forEach((slide, index) => {
+                slide.style.display = index === slideIndex ? 'block' : 'none';
+            });
         }
 
         function nextSlide() {
-            showSlide(currentIndex + 1);
+            showSlide(slideIndex += 1);
         }
 
         function prevSlide() {
-            showSlide(currentIndex - 1);
+            showSlide(slideIndex -= 1);
         }
 
-        // Auto slide every 3 seconds
-        setInterval(nextSlide, 3000);
+        showSlide(slideIndex); // Initialize slide show
     </script>
 </body>
 </html>
