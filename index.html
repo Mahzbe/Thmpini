@@ -7,6 +7,23 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         /* Add any additional CSS if needed */
+        .nav-links.show {
+            display: block;
+        }
+
+        .nav-links {
+            display: none;
+        }
+
+        .menu-button {
+            cursor: pointer;
+        }
+
+        /* Adjust carousel image size if needed */
+        .carousel-image {
+            max-width: 100%;
+            height: auto;
+        }
     </style>
 </head>
 <body>
@@ -74,13 +91,13 @@
     <script>
         // Toggle Navbar Visibility
         function toggleNavbar() {
-            var navbar = document.getElementById('navbar');
+            var navbar = document.querySelector('.nav-links');
             navbar.classList.toggle('show');
         }
 
         // Close Navbar after clicking a link
         function closeNavbar() {
-            var navbar = document.getElementById('navbar');
+            var navbar = document.querySelector('.nav-links');
             navbar.classList.remove('show');
         }
 
