@@ -326,10 +326,42 @@
             </select>
 
             <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
+            <textarea id="message" name="message" rows="4} required></textarea>
 
             <button type="submit">Send</button>
         </form>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog">
+        <h2>Enhancing Your Healing Journey: What to Do Alongside Sangoma Consultations</h2>
+
+        <h3>Introduction:</h3>
+        <p>Consulting with a sangoma can be a transformative experience, guiding you on your spiritual journey and helping you address various life challenges. However, to maximize the benefits of these consultations, there are additional practices you can incorporate into your daily life. Below, I outline several activities that can complement your journey with a sangoma.</p>
+
+        <h3>1. Practice Daily Reflection:</h3>
+        <p>Taking time each day for self-reflection allows you to connect with your inner thoughts and feelings. Consider keeping a journal where you can document your emotions, experiences, and insights gained from your consultations. This practice can deepen your understanding of yourself and help you recognize patterns over time.</p>
+
+        <h3>2. Engage in Meditation and Mindfulness:</h3>
+        <p>Meditation cultivates awareness and presence, making it easier to receive the messages from your sangoma. Even a few minutes of focused breathing can center your mind and help you connect with spiritual guidance. Mindfulness in daily activities can also enhance your overall well-being.</p>
+
+        <h3>3. Connect with Nature:</h3>
+        <p>Nature holds powerful healing energy. Spend time outdoors, whether it’s walking in a park, hiking, or simply sitting under a tree. Allow the natural world to recharge your spirit and help you find clarity. Nature can be a great source of inspiration and comfort.</p>
+
+        <h3>4. Explore Cultural Practices:</h3>
+        <p>Learn more about the cultural traditions and rituals associated with sangoma practices. This could involve researching local customs or participating in community events. Understanding the cultural context can enrich your experience and deepen your respect for the healing process.</p>
+
+        <h3>5. Create a Sacred Space:</h3>
+        <p>Establish a dedicated space in your home for spiritual activities. This area can include items that are meaningful to you, such as crystals, candles, or photographs of ancestors. A sacred space provides a physical reminder of your commitment to your healing journey.</p>
+
+        <h3>6. Build Supportive Relationships:</h3>
+        <p>Surround yourself with positive and supportive individuals who encourage your growth. Share your experiences and insights with friends or family members. Having a support network can provide additional encouragement and perspective.</p>
+
+        <h3>Conclusion:</h3>
+        <p>By integrating these practices into your life while consulting with a sangoma, you can enhance your healing journey and cultivate a deeper connection with yourself and your spirituality. Remember, the path to healing is a collaborative effort. Embrace both the consultations and your personal efforts for a more profound transformation.</p>
+
+        <h3>Call-to-Action:</h3>
+        <p>If you're interested in learning more about how I can assist you on your journey or would like to explore these practices further, don't hesitate to reach out!</p>
     </section>
 
     <!-- Footer Section -->
@@ -338,41 +370,5 @@
         <button class="tiktok-button" onclick="window.open('https://Tiktok.com/@mafelempinithamb', '_blank')">Follow us on TikTok</button>
     </div>
 
-    <script>
-        // Navbar toggle functionality
-        function toggleNavbar() {
-            const navbar = document.getElementById('navbar');
-            navbar.classList.toggle('show');
-        }
-
-        function closeNavbar() {
-            const navbar = document.getElementById('navbar');
-            navbar.classList.remove('show');
-        }
-
-        // Carousel functionality
-        let slideIndex = 0;
-        function showSlide(n) {
-            const slides = document.querySelectorAll('.carousel-image');
-            if (n >= slides.length) { slideIndex = 0; }
-            if (n < 0) { slideIndex = slides.length - 1; }
-            slides.forEach((slide, index) => {
-                slide.style.display = index === slideIndex ? 'block' : 'none';
-            });
-        }
-
-        function nextSlide() {
-            showSlide(slideIndex += 1);
-        }
-
-        function prevSlide() {
-            showSlide(slideIndex -= 1);
-        }
-
-        showSlide(slideIndex); // Initialize slide show
-
-        // Automatically change slides every 3 seconds
-        setInterval(nextSlide, 3000); // Change slide every 3 seconds
-    </script>
 </body>
-</html>
+            </html>
